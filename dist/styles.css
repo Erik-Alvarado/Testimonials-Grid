@@ -1,0 +1,205 @@
+@keyframes fadeUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0%;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0%;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  font-size: 13px;
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px 0;
+  margin: 35px 30px;
+}
+
+.container .card {
+  background-color: red;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.container .card[data-name="dan"] {
+  background-color: #7541c8;
+}
+
+.container .card[data-name="dan"] img {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  opacity: 50%;
+  z-index: 0;
+}
+
+.container .card[data-name="dan"] .profile-pic {
+  background-image: url("/images/image-daniel.jpg");
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.container .card[data-name="john"] {
+  background-color: #48556a;
+}
+
+.container .card[data-name="john"] .profile-pic {
+  background-image: url("/images/image-jonathan.jpg");
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.container .card[data-name="jeanette"] {
+  background-color: #fff;
+}
+
+.container .card[data-name="jeanette"] .highlight {
+  color: #19212e;
+}
+
+.container .card[data-name="jeanette"] .review {
+  color: #19212e;
+  opacity: 70%;
+}
+
+.container .card[data-name="jeanette"] .profile-text {
+  color: #19212e !important;
+}
+
+.container .card[data-name="jeanette"] .profile-pic {
+  background-image: url("/images/image-jeanette.jpg");
+  border: 2px solid #48556a;
+}
+
+.container .card[data-name="patrick"] {
+  background-color: #19212e;
+}
+
+.container .card[data-name="patrick"] .profile-pic {
+  background-image: url("/images/image-patrick.jpg");
+  border: 2px solid #7541c8;
+}
+
+.container .card[data-name="kira"] {
+  background-color: #fff;
+  position: relative;
+}
+
+.container .card[data-name="kira"] .highlight {
+  color: #19212e;
+}
+
+.container .card[data-name="kira"] .review {
+  color: #19212e;
+  opacity: 70%;
+}
+
+.container .card[data-name="kira"] .profile-pic {
+  background-image: url("/images/image-kira.jpg");
+  border: 2px solid #48556a;
+}
+
+.container .card[data-name="kira"] .profile-text {
+  color: #19212e !important;
+}
+
+.container .card .reviewer {
+  display: flex;
+  align-items: center;
+}
+
+.container .card .reviewer .profile-pic {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  background-color: #fff;
+  border-radius: 50px;
+  background-position: center;
+  background-size: contain;
+}
+
+.container .card .reviewer .profile-text {
+  color: #fff;
+}
+
+.container .card .reviewer .profile-text .verified {
+  opacity: 50%;
+}
+
+.container .card .highlight {
+  margin: 10px 0;
+  color: #fff;
+  z-index: 5;
+  position: relative;
+}
+
+.container .card .review {
+  color: #fff;
+  opacity: 70%;
+}
+
+footer {
+  margin: 0 15px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */

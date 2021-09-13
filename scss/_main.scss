@@ -1,0 +1,111 @@
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px 0;
+  margin: 35px 30px;
+  .card {
+    background-color: red;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    &[data-name="dan"] {
+      background-color: $modViolet;
+      img {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        opacity: 50%;
+        z-index: 0;
+      }
+      .profile-pic {
+        background-image: url("/images/image-daniel.jpg");
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+    &[data-name="john"] {
+      background-color: $veryDarkGrayBlue;
+      .profile-pic {
+        background-image: url("/images/image-jonathan.jpg");
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+    &[data-name="jeanette"] {
+      background-color: $base;
+      .highlight {
+        color: $veryDarkBlackBlue;
+      }
+      .review {
+        color: $veryDarkBlackBlue;
+        opacity: 70%;
+      }
+      .profile-text {
+        color: $veryDarkBlackBlue !important;
+      }
+      .profile-pic {
+        background-image: url("/images/image-jeanette.jpg");
+        border: 2px solid $veryDarkGrayBlue;
+      }
+    }
+    &[data-name="patrick"] {
+      background-color: $veryDarkBlackBlue;
+      .profile-pic {
+        background-image: url("/images/image-patrick.jpg");
+        border: 2px solid $modViolet;
+      }
+    }
+    &[data-name="kira"] {
+      background-color: $base;
+      position: relative;
+      .highlight {
+        color: $veryDarkBlackBlue;
+      }
+      .review {
+        color: $veryDarkBlackBlue;
+        opacity: 70%;
+      }
+      .profile-pic {
+        background-image: url("/images/image-kira.jpg");
+        border: 2px solid $veryDarkGrayBlue;
+      }
+      .profile-text {
+        color: $veryDarkBlackBlue !important;
+      }
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      .profile-pic {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+        background-color: $base;
+        border-radius: 50px;
+        background-position: center;
+        background-size: contain;
+      }
+      .profile-text {
+        color: $base;
+        .verified {
+          opacity: 50%;
+        }
+      }
+    }
+    .highlight {
+      margin: 10px 0;
+      color: $base;
+      z-index: 5;
+      position: relative;
+    }
+    .review {
+      color: $base;
+      opacity: 70%;
+    }
+  }
+}
