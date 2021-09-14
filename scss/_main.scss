@@ -1,6 +1,12 @@
 main {
-  height: 100%;
   width: 100%;
+  @include breakpoint-up(small) {
+    height: 100%;
+  }
+  @include breakpoint-up(x-large) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .container {
@@ -8,15 +14,41 @@ main {
   height: 100%;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px 0;
-  margin: 35px 30px;
+  margin: 40px 30px 20px;
+  @include breakpoint-up(small) {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+  }
+  @include breakpoint-up(medium) {
+    margin: 0 100px;
+    padding: 50px 0;
+  }
+  @include breakpoint-up(x-large) {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px 200px;
+    padding: 200px 0;
+  }
+  @media (min-width: 1500px) {
+    width: 1100px;
+  }
   .card {
     background-color: red;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     position: relative;
+    transition: all ease 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
     &[data-name="dan"] {
       background-color: $modViolet;
+      animation: fadeDown ease 1s;
+      z-index: 5;
+      @include breakpoint-up(small) {
+        grid-column: span 2;
+      }
       img {
         position: absolute;
         right: 20px;
@@ -31,6 +63,7 @@ main {
     }
     &[data-name="john"] {
       background-color: $veryDarkGrayBlue;
+      animation: fadeRight ease 1s;
       .profile-pic {
         background-image: url("/images/image-jonathan.jpg");
         border: 2px solid rgba(255, 255, 255, 0.5);
@@ -38,8 +71,12 @@ main {
     }
     &[data-name="jeanette"] {
       background-color: $base;
+      animation: fadeUp ease 1s;
       .highlight {
         color: $veryDarkBlackBlue;
+        @include breakpoint-up(x-large) {
+          width: 180px;
+        }
       }
       .review {
         color: $veryDarkBlackBlue;
@@ -55,6 +92,10 @@ main {
     }
     &[data-name="patrick"] {
       background-color: $veryDarkBlackBlue;
+      animation: fadeRight ease 1s;
+      @include breakpoint-up(small) {
+        grid-column: span 2;
+      }
       .profile-pic {
         background-image: url("/images/image-patrick.jpg");
         border: 2px solid $modViolet;
@@ -62,7 +103,15 @@ main {
     }
     &[data-name="kira"] {
       background-color: $base;
+      animation: fadeLeft ease 1s;
       position: relative;
+      @include breakpoint-up(small) {
+        grid-column: span 3;
+      }
+      @include breakpoint-up(x-large) {
+        grid-row: span 2;
+        grid-column: span 1;
+      }
       .highlight {
         color: $veryDarkBlackBlue;
       }

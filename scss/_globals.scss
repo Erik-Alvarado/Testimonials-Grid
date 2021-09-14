@@ -8,5 +8,13 @@
 
 body {
   font-size: 13px;
-  height: 100vh;
+  background-color: $lightGrayBlue;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include breakpoint-up(large) {
+    height: 100vh;
+    justify-content: space-around;
+  }
 }

@@ -52,12 +52,35 @@
 
 body {
   font-size: 13px;
-  height: 100vh;
+  background-color: #ecf2f8;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media (min-width: 64em) {
+  body {
+    height: 100vh;
+    justify-content: space-around;
+  }
 }
 
 main {
-  height: 100%;
   width: 100%;
+}
+
+@media (min-width: 39.9375em) {
+  main {
+    height: 100%;
+  }
+}
+
+@media (min-width: 87em) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .container {
@@ -65,7 +88,36 @@ main {
   height: 100%;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px 0;
-  margin: 35px 30px;
+  margin: 40px 30px 20px;
+}
+
+@media (min-width: 39.9375em) {
+  .container {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+  }
+}
+
+@media (min-width: 56.25em) {
+  .container {
+    margin: 0 100px;
+    padding: 50px 0;
+  }
+}
+
+@media (min-width: 87em) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px 200px;
+    padding: 200px 0;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 1100px;
+  }
 }
 
 .container .card {
@@ -74,10 +126,23 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   position: relative;
+  transition: all ease 0.5s;
+}
+
+.container .card:hover {
+  transform: scale(1.1);
 }
 
 .container .card[data-name="dan"] {
   background-color: #7541c8;
+  animation: fadeDown ease 1s;
+  z-index: 5;
+}
+
+@media (min-width: 39.9375em) {
+  .container .card[data-name="dan"] {
+    grid-column: span 2;
+  }
 }
 
 .container .card[data-name="dan"] img {
@@ -95,6 +160,7 @@ main {
 
 .container .card[data-name="john"] {
   background-color: #48556a;
+  animation: fadeRight ease 1s;
 }
 
 .container .card[data-name="john"] .profile-pic {
@@ -104,10 +170,17 @@ main {
 
 .container .card[data-name="jeanette"] {
   background-color: #fff;
+  animation: fadeUp ease 1s;
 }
 
 .container .card[data-name="jeanette"] .highlight {
   color: #19212e;
+}
+
+@media (min-width: 87em) {
+  .container .card[data-name="jeanette"] .highlight {
+    width: 180px;
+  }
 }
 
 .container .card[data-name="jeanette"] .review {
@@ -126,6 +199,13 @@ main {
 
 .container .card[data-name="patrick"] {
   background-color: #19212e;
+  animation: fadeRight ease 1s;
+}
+
+@media (min-width: 39.9375em) {
+  .container .card[data-name="patrick"] {
+    grid-column: span 2;
+  }
 }
 
 .container .card[data-name="patrick"] .profile-pic {
@@ -135,7 +215,21 @@ main {
 
 .container .card[data-name="kira"] {
   background-color: #fff;
+  animation: fadeLeft ease 1s;
   position: relative;
+}
+
+@media (min-width: 39.9375em) {
+  .container .card[data-name="kira"] {
+    grid-column: span 3;
+  }
+}
+
+@media (min-width: 87em) {
+  .container .card[data-name="kira"] {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
 }
 
 .container .card[data-name="kira"] .highlight {
@@ -193,13 +287,22 @@ main {
 
 footer {
   margin: 0 15px;
+  position: relative;
+  height: 30px;
 }
 
 .attribution {
   position: absolute;
-  bottom: 10px;
+  text-align: center;
   right: 0;
   left: 0;
-  text-align: center;
+  bottom: 15px;
+  color: #19212e;
+}
+
+.attribution a {
+  color: #7541c8;
+  font-weight: 600;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */
